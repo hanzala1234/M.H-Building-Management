@@ -1,0 +1,39 @@
+=======================Building Management App ================================
+SCOPE:
+
+1- Announcement
+2- Payment alert
+3- bills info
+4- complain registration
+5- suggestion
+6- balance check
+
+PRINCIPLE:
+
+1-  There will be two type of login "Admin" and "Member"
+2-  loging id of member will be approved by admin.(No signup form for admin)
+3-  Each memeber has a right to suggest or complain
+4-  Only 1 id per house can be assigned
+5-  admin can sent payment alert to any of member.
+6-  admin can do announcement which will be uploaded in notification column of member and announcement column
+7-  suggestion and complain can only be displayed to admin.
+8-  Every member will have access to current and past month bills(building) amount and expiry date too.
+9-  Every member will have access to information about the expenses of building of current and past months.
+10- Every member has right to ask question which can only be answered by admin and it will be displayed to all members.
+
+TECHNOLOGIES :
+  Client:
+    React
+
+  Server:
+     Nodejs
+   
+  Database:
+     Mongodb
+
+INSTRUCTIONS:
+
+* App will be PWA.
+* Everything will be done in a professional manner 
+* Git repo will be  created and there will be separate push for every step
+* unit testing will be performed
