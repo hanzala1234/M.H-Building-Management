@@ -34,7 +34,7 @@ exports = module.exports = function (app, mongoose) {
     });
     
     router.get('/all', function (req, res) {
-        console.log("df");
+        
         
         var members = app.db.model("messages");
 
@@ -53,7 +53,7 @@ exports = module.exports = function (app, mongoose) {
                 
                 var clientServerOptions = {
 
-                    uri: 'http://localhost:8080/member/getMultiple',
+                    uri: app.get('members-name-url'),
                     body: JSON.stringify(message),
                     method: 'POST',
                     headers: {
@@ -66,12 +66,15 @@ exports = module.exports = function (app, mongoose) {
                   
                     if (res1.length!=0) {
                         var response = JSON.parse(res1.body).result;
-                        for (i = 0; i < res1.length; i++) {
+                        
+                        for (i = 0; i < response.length; i++) {
                             data[i].name = response[i];
-
+                        
+                            
                         }
                         
                     }
+                    
                     res.send({ data: data });
                    
                 }

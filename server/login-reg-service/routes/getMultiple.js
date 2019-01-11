@@ -8,7 +8,7 @@ exports = module.exports = function (app, mongoose) {
 
 
        var members = app.db.model("members");
-
+        
         members.find({ _id: { $in: ids } }, function (err, result) {
             var myresult = [];
             if (result) {
@@ -21,8 +21,8 @@ exports = module.exports = function (app, mongoose) {
 
                 });
 
-                var names = myresult.map((data) => { return data.firstName+" "+data.lastName });
-
+                var names = myresult.map((data) => { return data.name });
+                
                 res.send({ result: names });
             }
             else {
