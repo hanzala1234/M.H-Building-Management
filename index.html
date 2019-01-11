@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1> Form For Singup</h1>
+<table>
+<tr>
+    <td>Name</td>
+    <td><input type="text" id='name'/></td>
+</tr>
+<tr>
+    <td>contact</td>
+    <td><input type="text" id="contact"/></td>
+</tr>
+<tr>
+    <td>flatNo</td>
+    <td><input type="text" id="flatNo"/></td>
+</tr>
+<tr>
+    <td>image</td>
+    <td><input type="file" id='image'/></td>
+</tr>
+<tr>
+    <td>Email</td>
+    <td><input type="email" id='email'/></td>
+</tr>
+<tr>
+    <td>password</td>
+    <td><input type="password" id='password'/></td>
+</tr>
+
+</table>
+<button onClick='send()'>Submit</button>
+<script>
+    function send(){
+var name=document.getElementById('name').value;var email=document.getElementById('email').value;
+var flatNo=document.getElementById('flatNo').value;var contact=document.getElementById('contact').value;
+var password=document.getElementById('password').value;var image=document.getElementById('image').files[0];  
+console.log(image); 
+var form =new FormData();
+
+form.append("img", image);
+form.append("name", name); 
+form.append("contact", contact);
+form.append("flatNo", flatNo);
+
+form.append("email", email);
+form.append("password",password);   
+
+fetch("http://localhost:8080/member/signup", {
+            method: 'POST',
+            body: form
+        }).then(response => {
+            return response.json();
+        }).then(responseJson => {console.log(responseJson);});
+}</script>
+</body>
+
+
+</html>
