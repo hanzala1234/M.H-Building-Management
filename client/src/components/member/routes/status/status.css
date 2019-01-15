@@ -1,0 +1,78 @@
+.main-div{
+    background-color:#DFDDDD;
+    
+    margin-top:0px;
+    font-family: 'Javanese Text' 
+}
+.main-center-div{
+    background-color: #FFFFFF;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    margin: 0 auto;
+}
+.main-center-div h1{
+    margin-bottom: 0px;
+}
+.status-div{
+    width:90%;
+
+    margin: 5px auto;
+    
+    margin-top: 0px;
+}
+.status-div table{
+    width: 70%;
+    
+    font-family: Verdana;
+    
+    font-size: 20px;
+    /* border: 1px solid black; */
+}
+.status-div th{
+    
+    color: #565454;
+    /* border: 1px solid black; */
+    font-weight: normal;
+}
+.status-div th,.status-div td{
+    padding: 15px 0px;
+    text-align:center;
+    
+}
+td:nth-last-child(1),th:nth-last-child(1){
+    padding-left: 100px;
+    
+}
+.status-top{
+    display: flex;
+}
+.status-top img{
+    height: 130px;
+    width: 130px;
+    margin-left: 30px;
+    margin-top: 60px;
+    border-radius: 50%;
+}
+.message-box{
+    border: 1px solid #707070;
+    width: 100%;
+    height: 190px;
+    overflow-y: scroll;
+}
+.status-div h2{
+    margin-bottom: 0px;
+}
+.message{
+    color:#565454;
+    
+    border-bottom: 1px solid #565454;
+    padding: 0px 15px;
+}
+#date{
+    color:#565454;
+    margin:0px;
+    /* border: 1px solid black; */
+  float: right;
+}

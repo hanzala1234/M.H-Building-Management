@@ -1,0 +1,40 @@
+.main-div{
+    background-color:#DFDDDD;
+    
+    margin-top:0px;
+    font-family: 'Javanese Text' 
+}
+.main-center-div{
+    background-color: #FFFFFF;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    margin: 0 auto;
+}
+
+.main-center-div h1{margin-bottom: 0px;}
+.budget-div{
+    width:60%;
+line-height: 100%;
+    margin: 5px auto;
+    /* border: 1px solid black; */
+    margin-top: 30px;
+}
+.budget-div table{
+    width: 100%;
+    margin-top: 50px;
+    
+}
+.budget-div table td{
+    padding: 15px 0px;
+    /* border: 1px solid black; */
+    align-content: right;
+   }
+   .selector{
+       float: right;
+   }
+   .selector select{
+       padding: 3px 10px;
+       margin-left: 14px;
+   }

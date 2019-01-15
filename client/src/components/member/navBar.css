@@ -1,0 +1,25 @@
+.navBar{
+   
+    height: 50px;
+    background-color: #FCF9F9;
+    margin:0px;
+    display: flex;
+    margin: 0px;
+    
+    justify-content: center;
+   
+}
+.navBar ol{
+    display: flex; 
+flex-direction: row;
+margin-top: 0px;
+width: 60%;
+
+ height: 100%;
+ padding: 0px;
+justify-content: space-between;
+margin: 0px;
+font-family: Georgia;
+align-items: center;
+    list-style-type: none;
+}
