@@ -20,6 +20,7 @@ exports = module.exports = function (app, mongoose) {
         var members = app.db.model('members');
 
         members.find({ status:"accepted" }).then((data) => {
+            
          if(data) res.send({success:true,data:data});
         else res.send({success:false,message:"No data found "});
         }).catch((err)=>{

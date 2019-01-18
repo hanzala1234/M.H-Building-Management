@@ -50,13 +50,14 @@ exports = module.exports = function (app, mongoose) {
             ).exec(function (err, result) {
                 console.log(result);
                 var saving = 0;
+                if(err) return res.send({success:false,message:err.message});
                 if (result[0] && !result[1] && result[0]._id == 'expense') saving = -result[0].total;
                 else if (result[0] && !result[1] && result[0]._id == 'receive') saving = result[0].total;
 
                 else if (result[0] && result[1])
                     saving = result[0].total - result[1].total;
 
-                return res.send({ err: err, data: data, savings: saving,income:income });
+                return res.send({ success: true, expense: data, savings: saving,income:income });
             })
 
             // res.send({ err: err, data: data });

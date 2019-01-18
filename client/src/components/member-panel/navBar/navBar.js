@@ -13,7 +13,7 @@ function navBar() {
                 <li><Link to={"/Announcement"}>Annoucement</Link></li>
                 <li> <Link to={'/message'}>Comp/Sugg</Link></li>
                 <li><Link to={'/budget'}>Budget</Link></li>
-
+               
                 <li> <Link to={'/status'}>My Status</Link></li>
 
             </ol>

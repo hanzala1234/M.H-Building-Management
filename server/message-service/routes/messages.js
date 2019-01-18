@@ -18,7 +18,7 @@ exports = module.exports = function (app, mongoose) {
             if (!err)
                 res.send({ "success": true, message: "Message has been successfully added" });
             else
-                res.send({ "success": false, message: "data could not be added" });
+                res.send({ "success": false, message: err });
         });
 
     });
@@ -27,8 +27,9 @@ exports = module.exports = function (app, mongoose) {
         var id=req.params.id;
         var members = app.db.model("messages");
         members.find({memberId:id}, (err, memberData) => {
-            if(err) return res.send({err:err});
-            res.send({data:memberData});
+            if(err) return res.send({success:false,error:err});
+            
+            res.send({success:true,data:memberData});
            
         });
     });
@@ -41,48 +42,18 @@ exports = module.exports = function (app, mongoose) {
 
         members.find({}, (err, memberData) => {
           
-            let data = JSON.parse(JSON.stringify(memberData))
+            
             
 
-            if (err) return res.send({ error: err });
-           
-            if (data.length!=0) {
+            if (err) return res.send({ success:false,error: err });
+            memberData=memberData.reverse();
+            res.send({success:true,data:memberData});
+            
+                                
+               
 
-                var ids = data.map((message) => { return message.memberId; });
-                var message = { ids: ids }
-                
-                var clientServerOptions = {
-
-                    uri: app.get('members-name-url'),
-                    body: JSON.stringify(message),
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }
-
-                request.post(clientServerOptions, function (err, res1) {
-
-                  
-                    if (res1.length!=0) {
-                        var response = JSON.parse(res1.body).result;
-                        
-                        for (i = 0; i < response.length; i++) {
-                            data[i].name = response[i];
-                        
-                            
-                        }
-                        
-                    }
-                    
-                    res.send({ data: data });
-                   
-                }
-                );
-
-
-
-            }
+            
+            
         });
     });
 

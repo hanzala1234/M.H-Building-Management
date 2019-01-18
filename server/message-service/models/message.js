@@ -1,10 +1,15 @@
 exports = module.exports = function (app, mongoose) {
 
     var schema = mongoose.Schema;
+   
     var message = new schema({
+        name:{
+            type: String,
+            required: true
+        },
         memberId:{
             type: String,
-             required: true
+            required: true
         },
         message:{
             type: String,

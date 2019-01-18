@@ -7,7 +7,9 @@ exports = module.exports = function (app, mongoose) {
         var members = app.db.model("members");
         var email = req.body.email;
         var password = req.body.password;
-       console.log('request received');
+        
+        
+       
         members.findOne({ email: email, password: password,status:"accepted" }, (err, data) => {
             if(err) res.send({success:false,error: err});
             if (data) res.send({success:true,result:data});
