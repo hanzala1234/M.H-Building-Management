@@ -1,0 +1,69 @@
+.member{
+    display: flex;
+    
+    }
+ .main-div   h2{
+        text-align: center;
+        font-weight: normal;
+    }
+    .main-div{
+        font-family: Verdana;
+        flex-grow: 1; 
+    }
+    .main-div>table{
+        width:98%;
+        margin: 0px 20px;
+        border-collapse: collapse;    
+    }
+    .main-div>table thead th{
+        text-align: center;
+        color:#5F1C1C;
+        padding-bottom: 29px;
+    }
+    .main-div>table td{
+        text-align: center;
+    }
+    .main-div table img{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+    }
+    #payment_alert{
+        background-color:#FF2323;
+        color: white;
+        cursor: pointer;
+        padding: 8px 15px;
+        border: 0px solid black;
+    }
+    .main-div>table tbody td{
+        padding:10px 0px;
+    }
+    .main-div>table tbody tr{
+       
+        border-top: 1px solid #707070;
+        border-bottom: 1px solid #707070;
+    }
+    #add_Payment{
+        background-color:#08E108;
+        color: white;
+        padding: 8px 15px;
+        cursor: pointer;
+        border: 0px solid black;
+    }
+    .add-payment{
+        padding: 20px;
+    }
+    .add-payment table{
+        width: 100%;
+    }
+    .add-payment table td:nth-child(1){
+        text-align: left;
+    }
+    .add-payment button{
+        padding: 5px 15px;
+        margin-top: 30px;
+    }
+    .add-payment input{
+        padding: 3px;
+    }
+    

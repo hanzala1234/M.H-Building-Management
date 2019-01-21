@@ -30,7 +30,21 @@ font-family: 'Microsoft Tai Le';
   flex-direction: column;
   align-content: space-between;
 }
-.login-main-div h3{
+.signup-main-div{
+  /* height: 550px; */
+  width: 100%;
+display: flex; 
+font-family: 'Microsoft Tai Le';
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  flex-direction: column;
+  align-content: space-between;
+}
+.signup-main-div table{
+  margin-top: 40px;
+}
+.login-main-div h3,.signup-main-div h3{
   font-size:32px;
   font-weight: normal;
 }
@@ -41,26 +55,41 @@ padding: 5px;
 
 
 }
-.login-main-div table,tr{
- border-collapse: collapse;
-  /* margin-top:20px; */
+.signup-main-div td{
   
-  /* border: 1px ?solid black; */
+font-size:18px;
+padding: 0px;
 }
+.signup-main-div td:nth-child(2){
+  /* text-align: left; */
+  padding-left: 0px;
+  
+}
+
 .login-main-div td{
  padding-top:20px;
   
 }
+.signup-main-div td{
+  padding-top: 5px;
+}
 .login-main-div td input{
   padding: 5px;
 }
-.login-main-div button{
+.signup-main-div td input{
+  padding: 3px;
+}
+.signup-main-div table td{
+  padding-top: 15px;
+}
+.login-main-div button,.signup-main-div button{
   background-color:#E1DEDE;
   border: 1px solid #707070;
   padding: 10px 30px;
   MARGIN-TOP:20px;
   
 }
-.login-main-div h3,.login-main-div button,.login-main-div a{
+.login-main-div h3,.login-main-div button,.login-main-div a,
+.signup-main-div h3,.signup-main-div button,.signup-main-div a{
   margin-left: 60px;
 }

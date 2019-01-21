@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM1 from 'react-dom';
 import './index.css';
-
-import App from './App';
+import App from './components/admin-panel/budget/budget';
 // import App from './App';
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM1.render(

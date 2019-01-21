@@ -1,0 +1,54 @@
+.pending{
+    display: flex;
+    
+    }
+ .main-div  h2{
+        text-align: center;
+        font-weight: normal;
+        margin-bottom: 60px;
+    }
+    .main-div{
+        font-family: Verdana;
+        flex-grow: 1; 
+      
+    }
+    .members{
+        padding: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid rgb(110, 109, 109);
+        border-bottom: 1px solid rgb(110, 109, 109);
+        
+    }
+    .members ul{
+        /* border: 1px solid black; */
+        margin:0px 20px;
+        text-align: center;
+        
+        list-style-type: none;
+    }
+    .members ul li{
+        margin-top: 5px;
+    }
+    .members img{
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+        
+    }
+    .members button{
+        background-color: white;
+        border: 1px solid black;
+        padding: 7px 20px;
+        cursor: pointer;
+        
+    }
+    .button{
+        margin-left: 50px;
+    }
+    .members button img{
+        height: 15px;
+        
+        width: 15px;
+    }

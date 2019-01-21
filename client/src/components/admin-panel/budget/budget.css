@@ -1,0 +1,58 @@
+
+.budget{
+    display: flex;
+    
+    }
+ .main-div   h2{
+        text-align: center;
+        font-weight: normal;
+    }
+    .main-div{
+        font-family: Verdana;
+        flex-grow: 1; 
+    }
+    .budget-post{
+        background-color:#F1ECDD;
+        padding: 20px 150px;
+    }
+    .budget-post input{
+        padding: 3px;
+        margin: 15px 10px;
+    }
+   
+    .budget-post button,.expenses  button{
+        margin-top: 8px;
+        background-color:#D28C4F;
+        border: none;
+        color: white;
+        padding: 10px;
+        margin-left: 70px;
+    }
+    .expenses table{
+        width:100%;
+        border:0; 
+        
+  /* border-collapse:separate;  */
+  border-spacing:0 5px;
+    }
+   
+    .expenses table tbody tr:nth-child(1) td,.expenses table tfoot tr:nth-child(1) td{
+        border-top: 1px solid black;
+    }
+    
+    .expenses table tbody td,.expenses table tfoot td{
+     text-align: center;
+    }
+    .expenses table  tbody:before,.expenses table  tbody:after {
+        content: "-";
+        display: block;
+        line-height: 1em;
+        color: transparent;
+    }
+    .expenses table tbody tr::after{
+        content:"-";
+        display: block;
+        line-height: 3em;
+        color: transparent;
+    }
+   

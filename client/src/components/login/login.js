@@ -50,10 +50,11 @@ class Login extends React.Component {
             <div>
                 {/* <Header/> */}
                 <div className="login-main-div">
-                    {console.log("login value"+this.props.isLogin)}
+                   
                     <center><h3> User Login</h3></center>
 
                     <table>
+                        <tbody>
                         <tr>
                             <td>
                                 Email
@@ -76,6 +77,7 @@ class Login extends React.Component {
                             </td>
 
                         </tr>
+                        </tbody>
                     </table>
                     <button onClick={this.login}> Submit </button>
                     <a href="">Login as an Admin</a>
