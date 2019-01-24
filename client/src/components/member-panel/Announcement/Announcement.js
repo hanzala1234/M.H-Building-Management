@@ -1,6 +1,7 @@
 import React from 'react'
 import './Announcement.css'
-import NavBar from '../navBar/navBar'
+import GloabalApi from '../../../config/api'
+
 class Announcement extends React.Component{
     componentDidMount(){
         this.fetchAnnouncement();
@@ -19,7 +20,7 @@ class Announcement extends React.Component{
     render(){
         return(
             <div>
-                <NavBar />
+               
             
         <div className='main-div'>
         <div className='main-center-div'>
@@ -35,7 +36,9 @@ class Announcement extends React.Component{
         );
     }
     fetchAnnouncement=()=>{
-        fetch('http://localhost:8030/Announcement/'+sessionStorage.getItem("user_id")).then(
+        const userId=sessionStorage.getItem("user_id");
+        
+        fetch(`${GloabalApi.announcementApi}Announcement/${userId}`).then(
                 (response)=>{
                     response.json().then((data)=>{
                         if(data.success){
@@ -64,9 +67,9 @@ function DisplayAnnouncement(props){
     <div>
     {props.announcements.map((announcement)=>{
         return(
-            <div className="announcement">
-            {console.log(announcement)}
-            <span id="date">{announcement.createAt}</span>
+            <div className="announcement" key={announcement._id}>
+            
+            <span id="date">{new Date(announcement.createAt).toDateString()}</span>
             <div className="para"><p>
             {announcement.announcement}</p>
             </div>

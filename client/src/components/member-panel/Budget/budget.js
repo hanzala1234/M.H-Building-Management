@@ -1,6 +1,6 @@
 import React from 'react'
 import './budget.css'
-import NavBar from '../navBar/navBar'
+import GloabalApi from '../../../config/api'
 
 
 let datearray = [];
@@ -29,15 +29,17 @@ class Budget extends React.Component {
 
 
     componentDidMount() {
-        var date = new Date();
-        this.fetchBudget(date.getMonth(), date.getFullYear());
+        var date = this.state.month.split(' ');
+                var month = date[0];
+                var year = date[1];
+        this.fetchBudget(month,year);
     }
 
     render() {
         return (
             <div>
 
-                <NavBar />
+              
                 <div className='main-div'>
                     <div className='main-center-div'>
                         <center>   <h1>Budget</h1> </center>
@@ -54,10 +56,10 @@ class Budget extends React.Component {
     }
 
     fetchBudget = (month, year) => {
-
-        fetch('http://localhost:8050/Budget/' + month + "/" + year).then(
+        
+        fetch(`${GloabalApi.budgetApi}Budget/${month}/${year}`).then(
             (response) => {
-                console.log('received');
+                
                 response.json().then((data) => {
                     if (data.success) {
 
@@ -99,6 +101,7 @@ function DisplayBudget(props) {
     if (!props.isLoading && !props.err)
         return (<div>
             <table>
+                <tbody>
                 <tr><td>previous Month savings</td>
                     <td> {props.savings}</td>
                 </tr>
@@ -106,15 +109,16 @@ function DisplayBudget(props) {
                     <td> {props.income}</td>
                 </tr>
                 {props.expense.map((expense) => {
-                    return <tr><td>{expense.title}</td>
+                    return <tr key={expense._id}><td>{expense.title}</td>
                         <td>{expense.amount}</td>
                     </tr>
                 })}
 
                 <hr />
-                <tr><td>total</td>
+                <tr><td>total savings</td>
                     <td> {props.total}</td>
                 </tr>
+                </tbody>
             </table>
 
         </div>);
@@ -137,7 +141,7 @@ function Selector(props) {
 
             }}>
                 {datearray.map((date) => {
-                    return <option>{date}</option>
+                    return <option key={date}>{date}</option>
                 })}
 
             </select>

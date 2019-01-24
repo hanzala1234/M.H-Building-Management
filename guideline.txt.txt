@@ -1,4 +1,5 @@
 =======================Building Management App ================================
+
 SCOPE:
 
 1- Announcement

@@ -3,11 +3,11 @@
     display: flex;
     
     }
- .main-div   h2{
+ .admin-budget-div   h2{
         text-align: center;
         font-weight: normal;
     }
-    .main-div{
+    .admin-budget-div{
         font-family: Verdana;
         flex-grow: 1; 
     }
@@ -20,7 +20,8 @@
         margin: 15px 10px;
     }
    
-    .budget-post button,.expenses  button{
+    
+    .budget-post button,.admin-budget-div  button{
         margin-top: 8px;
         background-color:#D28C4F;
         border: none;
@@ -34,6 +35,10 @@
         
   /* border-collapse:separate;  */
   border-spacing:0 5px;
+    }
+    .expenses{
+        height: 40%;
+        overflow-y:scroll;
     }
    
     .expenses table tbody tr:nth-child(1) td,.expenses table tfoot tr:nth-child(1) td{

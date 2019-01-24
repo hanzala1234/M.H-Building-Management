@@ -19,7 +19,7 @@ exports = module.exports = function (app, mongoose) {
         
         var members = app.db.model('members');
 
-        members.find({ status:"accepted" }).then((data) => {
+        members.find({ status:"accepted",role:"member" }).then((data) => {
             
          if(data) res.send({success:true,data:data});
         else res.send({success:false,message:"No data found "});
@@ -34,10 +34,10 @@ exports = module.exports = function (app, mongoose) {
         var members = app.db.model('members');
         
         members.find({status:"pending"}).then((data) => {
-         if(data.length!=0) res.send({data:data});
-        else res.send({data:data});
+          res.send({success:true,data:data});
+        
         }).catch((err)=>{
-         res.send({error:err});
+         res.send({success:false,error:err});
         });
 
 
@@ -52,9 +52,9 @@ exports = module.exports = function (app, mongoose) {
                 }
             }).then((data) => {
          if(data) res.send({success:true,data:data});
-        else res.send({sucess: false,data:data});
+        else res.send({sucess: false,message:"could not accept right now"});
         }).catch((err)=>{
-         res.send({success:false,error:err});
+         res.send({success:false,message:"could not accept right now"});
         });
 
 

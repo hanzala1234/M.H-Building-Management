@@ -52,8 +52,8 @@ exports = module.exports = function (app, mongoose) {
     }
 
     router.post('/signup', upload.single("img"), function (req, res) {
-  
-         console.log(req.body);
+        if(!req.file) return res.send({success:false,message:"kindly send complete requirement"});
+         req.body.role="member"
 
         uploadImage(req, res);
 

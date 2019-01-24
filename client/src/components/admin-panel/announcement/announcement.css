@@ -1,12 +1,9 @@
-.announcement{
-    display: flex;
-    
-    }
- .main-div   h2{
+
+ .admin-announcement-main-div   h2{
         text-align: center;
         font-weight: normal;
     }
-    .main-div{
+    .admin-announcement-main-div{
         font-family: Verdana;
         flex-grow: 1; 
     }
@@ -28,8 +25,10 @@
     .announcement-post textarea{
         resize: none;
     }
-    .announcement-display{
+    .admin-announcement-display{
         padding: 10px; 
+        width: 100%;
+            
         border-top: 1px solid rgb(128, 124, 124);
         border-bottom: 1px solid rgb(128, 124, 124);
         border-collapse: separate;
@@ -37,11 +36,11 @@
         
     }
   
-    .announcement-display p{
+    .admin-announcement-display p{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         max-width: 80%;
     }
-    #date{
+    #admin-date{
         position: absolute;
         right: 0px;
         font-size: 14px;

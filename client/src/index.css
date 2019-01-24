@@ -12,7 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+#signup-link{
+  margin-top: 12px;
+}
 .custom{
   border:1px solid black;
   height:200px;

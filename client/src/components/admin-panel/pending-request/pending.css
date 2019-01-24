@@ -1,18 +1,15 @@
-.pending{
-    display: flex;
-    
-    }
- .main-div  h2{
+
+ .admin-pending-div  h2{
         text-align: center;
         font-weight: normal;
         margin-bottom: 60px;
     }
-    .main-div{
+    .admin-pending-div{
         font-family: Verdana;
         flex-grow: 1; 
       
     }
-    .members{
+    .pending-members{
         padding: 10px 0px;
         display: flex;
         justify-content: center;
@@ -21,23 +18,23 @@
         border-bottom: 1px solid rgb(110, 109, 109);
         
     }
-    .members ul{
+    .pending-members ul{
         /* border: 1px solid black; */
         margin:0px 20px;
         text-align: center;
         
         list-style-type: none;
     }
-    .members ul li{
+    .pending-members ul li{
         margin-top: 5px;
     }
-    .members img{
+    .pending-members img{
         border-radius: 50%;
         height: 60px;
         width: 60px;
         
     }
-    .members button{
+    .pending-members button{
         background-color: white;
         border: 1px solid black;
         padding: 7px 20px;
@@ -47,7 +44,7 @@
     .button{
         margin-left: 50px;
     }
-    .members button img{
+    .pending-members button img{
         height: 15px;
         
         width: 15px;

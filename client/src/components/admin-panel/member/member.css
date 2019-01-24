@@ -1,29 +1,32 @@
-.member{
+.admin-members{
     display: flex;
     
     }
- .main-div   h2{
+ .member-display   h2{
         text-align: center;
         font-weight: normal;
     }
-    .main-div{
+    .member-display{
         font-family: Verdana;
         flex-grow: 1; 
+        
     }
-    .main-div>table{
+    .member-display>table{
         width:98%;
+        /* max-height: 60%; */
+        overflow: hidden;
         margin: 0px 20px;
         border-collapse: collapse;    
     }
-    .main-div>table thead th{
+    .member-display>table thead th{
         text-align: center;
         color:#5F1C1C;
         padding-bottom: 29px;
     }
-    .main-div>table td{
+    .member-display>table td{
         text-align: center;
     }
-    .main-div table img{
+    .member-display table img{
         height: 50px;
         width: 50px;
         border-radius: 50%;
@@ -35,10 +38,10 @@
         padding: 8px 15px;
         border: 0px solid black;
     }
-    .main-div>table tbody td{
+    .member-display>table tbody td{
         padding:10px 0px;
     }
-    .main-div>table tbody tr{
+    .member-display>table tbody tr{
        
         border-top: 1px solid #707070;
         border-bottom: 1px solid #707070;

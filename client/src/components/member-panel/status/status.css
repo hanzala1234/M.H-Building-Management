@@ -15,6 +15,15 @@
 .main-center-div h1{
     margin-bottom: 0px;
 }
+#logout{
+    float: right;
+    color: blue;
+    background-color: white;
+    border: none;
+    font-size: 19px;
+    cursor: pointer;
+
+}
 .status-div{
     width:90%;
 

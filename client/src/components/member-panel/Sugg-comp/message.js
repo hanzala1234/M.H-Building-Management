@@ -1,6 +1,6 @@
 import React from 'react'
 import './message.css'
-import NavBar from '../navBar/navBar'
+import GlobalApi from '../../../config/api'
 class Messages extends React.Component {
 
   
@@ -18,7 +18,7 @@ class Messages extends React.Component {
     render() {
         return (
             <div>
-                <NavBar />
+              
                 <div className='main-div'>
                     <div className='main-center-div'>
 
@@ -33,7 +33,8 @@ class Messages extends React.Component {
         );
     }
     fetchMessages = () => {
-        fetch('http://localhost:8020/messages/all').then(
+        
+        fetch(`${GlobalApi.messageApi}messages/all`).then(
             (response) => {
                 response.json().then((data) => {
                     if (data.success) {
@@ -67,9 +68,11 @@ function DisplayMessages(props) {
                 {props.messages.map((message) => {
                     return (
                         
-                        <div className={message.messageType == 'suggestion' ? 'complain' : "suggestion"}>
+                        <div className={message.messageType === 'suggestion' ? 'complain' : "suggestion"} 
+                        key={message._id}
+                        >
                             <h4>{message.name}</h4>
-                            <date>{message.createAt}</date>
+                            <span id="date">{new Date(message.createAt).toDateString()}</span>
                             <p> {message.message}</p>
                             <span id="type"> type: {message.messageType}</span>
 
@@ -129,8 +132,8 @@ class SubmitHeader extends React.Component {
         this.postMessages(body);
     }
     postMessages = (body) => {
-
-        fetch('http://localhost:8020/messages', {
+        
+        fetch(`${GlobalApi.messageApi}messages`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -146,7 +149,7 @@ class SubmitHeader extends React.Component {
                 }
                 else {
                     alert(data.message.message);
-                    console.log(data.message);
+                    
                 }
             });
         }).catch(() => alert("Error sending data"));

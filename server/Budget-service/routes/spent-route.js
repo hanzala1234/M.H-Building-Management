@@ -11,11 +11,10 @@ exports = module.exports = function (app, mongoose) {
         body.transaction = 'expense';
         var newitem = new budget(req.body);
         newitem.save(function (err, data) {
-            if (err) res.send(err);
-            else {
+            if (err) return res.send({success:false,err:err});
+            
 
-                res.send(data);
-            }
+                res.send({success:true,data:data});
 
         });
 
@@ -24,11 +23,17 @@ exports = module.exports = function (app, mongoose) {
     });
     router.get('/spent', (req, res) => {
         var budget = app.db.model('budget');
+            var date = new Date();
+            var previousDate = new Date();
+            previousDate.setDate(0);
+            console.log(previousDate.toDateString())
 
-        budget.find({ transaction: 'expense' }, function (err, data) {
-            if (err) return res.send({ error: err });
+           
+        budget.find({ transaction: 'expense',Date:{ $lt: date, $gt: previousDate } },
+         function (err, data) {
+            if (err) return res.send({success:false, error: err });
             data.reverse();
-            res.send({ data: data });
+            res.send({ success:true,data: data });
         });
     });
 

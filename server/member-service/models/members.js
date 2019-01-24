@@ -1,3 +1,4 @@
+
 exports = module.exports = function (app, mongoose) {
 
     var schema = mongoose.Schema;
@@ -14,6 +15,10 @@ exports = module.exports = function (app, mongoose) {
             type: Number,
             required: true,
             default: 1000
+        },
+        role:{
+            type: String,
+            required: true
         },
         email: {
             type: String,
