@@ -46,12 +46,12 @@ form.append("flatNo", flatNo);
 form.append("email", email);
 form.append("password",password);   
 
-var form = new FormData();
+//var form = new FormData();
 
-form.append("email", "Muhammadhanzala12@gmail.com");
-form.append('password', "abcd");
+//form.append("email", "Muhammadhanzala12@gmail.com");
+//form.append('password', "abcd");
 
-fetch("http://localhost:8080/member/login", {
+fetch("http://localhost:8080/member/signup", {
     method: 'POST',
     body: form
     

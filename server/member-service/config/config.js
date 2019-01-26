@@ -1,5 +1,12 @@
 exports=module.exports=function(app){
-app.set('mongodb-url','mongodb://localhost:27017/Building-Management');
+if(process.env.enviroment=='production')
+
+	app.set('mongodb-url',process.env.memberurl);
+	
+	else
+	app.set('mongodb-url','mongodb://localhost:27017/Building-Management');
+	
+//app.set('mongodb-url','mongodb://localhost:27019/Building-Management');
 app.set("app-port",8080);
 app.set('cloud_name','hanzala-cloud');
 app.set('api_key','951633293415786');
