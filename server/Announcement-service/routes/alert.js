@@ -32,5 +32,8 @@ var receiver=['all',req.params.id]
     });
 
 });
-app.use('/Announcement', router);
+app.use('/announcement', router);
+app.use('/',function(req,res){
+    return res.status(200).send({success:true});
+});
 }

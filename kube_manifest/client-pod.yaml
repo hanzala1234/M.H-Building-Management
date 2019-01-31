@@ -1,0 +1,28 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  creationTimestamp: null
+  labels:
+    run: client-pod
+  name: client-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: client-pod
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: client-pod
+    spec:
+      containers:
+      - envFrom:
+              - configMapRef:  
+                        name: portal-client-config    
+          
+        image: muhammadhanzala/portal-client:v1
+        name: client-pod
+        resources: {}
+status: {}

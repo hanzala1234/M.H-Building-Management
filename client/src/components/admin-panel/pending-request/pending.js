@@ -36,7 +36,7 @@ class Members extends React.Component {
                 {this.state.members.map((member) => {
                     return (
                         <div className="pending-members" key={member._id}>
-                            <img  alt={member.name} src={member.image} />
+                            <img alt={member.name} src={member.image} />
                             <ul>
                                 <li>{member.name}</li>
                                 <li>{member.flatNo}</li>
@@ -120,7 +120,7 @@ class Members extends React.Component {
             });
         }).catch(() => alert("Error sending data"));
     }
-    
+
     fetchPendingRequest = () => {
 
         fetch(`${GloabalApi.memberApi}member/pending`).then(

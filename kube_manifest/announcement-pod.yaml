@@ -1,0 +1,47 @@
+kind: Service
+apiVersion: v1
+metadata:
+  creationTimestamp: null
+  name: announcement-service
+spec:
+  ports:
+  - port: 8030
+    protocol: TCP
+    targetPort: 8030
+  selector:
+    service: announcement-service
+  type: NodePort  
+status:
+  loadBalancer: {}
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: announcement-pod
+  name: announcement-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: announcement-pod
+      service: announcement-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: announcement-pod
+        service: announcement-service
+    spec:
+      containers:
+      - image: muhammadhanzala/portal-announcement-svc:v1
+        name: member-pod
+        env:
+               - name: phase
+                 value: production
+        ports:
+        - containerPort: 8030
+        resources: {}
+status: {}

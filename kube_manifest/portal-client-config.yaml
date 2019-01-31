@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  REACT_APP_PHASE: production
+  REACT_APP_MEMBER_SVC: '35.201.112.36'
+  REACT_APP_ANNOUNCEMENT_SVC: '35.201.112.36' 
+  REACT_APP_BUDGET_SVC: '35.201.112.36' 
+  REACT_APP_MESSAGE_SVC: '35.201.112.36' 
+
+metadata:
+  creationTimestamp: null
+  name: portal-client-config

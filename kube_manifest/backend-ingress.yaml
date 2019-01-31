@@ -1,0 +1,28 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+        name: backend-portal-ingress
+        annotations:
+                       kubernetes.io/ingress.global-static-ip-name: portal-backend-ip 
+spec:
+                rules:
+                - http:
+                        paths:
+                                - path: /announcement/*
+                                  backend:
+                                        serviceName: announcement-service
+                                        servicePort: 8030        
+                                - path: /member/*
+                                  backend:
+                                        serviceName: member-service
+                                        servicePort: 8080        
+                      
+                                - path: /messages/*
+                                  backend:
+                                        serviceName: message-service
+                                        servicePort: 8020        
+
+                                - path: /budget/*
+                                  backend:
+                                        serviceName: budget-service
+                                        servicePort: 8050        

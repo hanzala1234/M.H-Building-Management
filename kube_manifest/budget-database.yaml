@@ -1,0 +1,45 @@
+kind: Service
+apiVersion: v1
+metadata:
+  creationTimestamp: null
+  name: budget-database
+spec:
+  ports:
+  - port: 27017
+    protocol: TCP
+    targetPort: 27017
+  selector:
+    run: budget-database
+    database: budget-database
+status:
+  loadBalancer: {}
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  creationTimestamp: null
+  labels:
+    run: budget-database
+    database: budget-database
+  name: budget-database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: budget-database
+      database: budget-database
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: budget-database
+        database: budget-database
+    spec:
+      containers:
+      - image: mongo
+        imagePullPolicy: IfNotPresent
+        name: budget-database
+        ports:
+        - containerPort: 27017
+        resources: {}
+status: {}

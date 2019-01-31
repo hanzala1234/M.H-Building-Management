@@ -28,7 +28,7 @@ class Member extends React.Component {
     }
     fetchAnnouncement = () => {
         
-        fetch(`${GloabalApi.announcementApi}Announcement/all`).then(
+        fetch(`${GloabalApi.announcementApi}announcement/all`).then(
             (response) => {
                 response.json().then((data) => {
                     if (data.success) {
@@ -74,7 +74,7 @@ class PostAnnouncement extends React.Component {
        var body={
            announcement:this.state.announcement
        }
-        fetch(`${GloabalApi.announcementApi}Announcement`, {
+        fetch(`${GloabalApi.announcementApi}announcement/`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

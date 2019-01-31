@@ -1,10 +1,8 @@
 exports=module.exports=function(app){
-if(process.env.enviroment=='production')
-
-	app.set('mongodb-url',process.env.memberurl);
-	
-	else
-	app.set('mongodb-url','mongodb://localhost:27017/Building-Management');
+if(process.env.phase=='production')
+app.set('mongodb-url','mongodb://member-database:27017/Building-Management');
+else
+app.set('mongodb-url','mongodb://localhost:27017/Building-Management');
 	
 //app.set('mongodb-url','mongodb://localhost:27019/Building-Management');
 app.set("app-port",8080);

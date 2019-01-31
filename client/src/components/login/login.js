@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../header/header';
 import GlobalApi from '../../config/api';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 class Login extends React.Component {
     constructor() {
         super();
@@ -50,7 +50,7 @@ class Login extends React.Component {
                                 <td>
                                     role
                    </td>
-                                        
+
                                 <td id="radio">
 
                                     <input type="radio" name="role" value="member" onChange={(evt) => {
@@ -88,7 +88,7 @@ class Login extends React.Component {
         }
 
 
-        fetch(`${GlobalApi.memberApi}member/login`, {
+        fetch(GlobalApi.memberApi+'member/login', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -113,6 +113,8 @@ class Login extends React.Component {
                 else {
                     alert(data.message);
                 }
+            }).catch(()=>{
+                
             });
         }).catch(() => alert("Error sending data"));
 

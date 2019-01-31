@@ -133,7 +133,7 @@ class SubmitHeader extends React.Component {
     }
     postMessages = (body) => {
         
-        fetch(`${GlobalApi.messageApi}messages`, {
+        fetch(`${GlobalApi.messageApi}messages/`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

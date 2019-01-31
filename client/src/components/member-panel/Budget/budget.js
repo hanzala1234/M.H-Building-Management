@@ -57,7 +57,7 @@ class Budget extends React.Component {
 
     fetchBudget = (month, year) => {
         
-        fetch(`${GloabalApi.budgetApi}Budget/${month}/${year}`).then(
+        fetch(`${GloabalApi.budgetApi}budget/${month}/${year}`).then(
             (response) => {
                 
                 response.json().then((data) => {

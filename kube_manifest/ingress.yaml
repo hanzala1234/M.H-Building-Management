@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+      nginx.ingress.kubernetes.io/ssl-redirect: \"false\"
+  creationTimestamp: null
+  generation: 1
+  name: frontend-svc
+  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/frontend-svc
+spec:
+  rules:
+    - http:
+       paths:
+       - backend:
+          serviceName: client-pod
+          servicePort: 30031
+         path: /frontend
+status:
+  loadBalancer: {}

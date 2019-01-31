@@ -41,5 +41,6 @@ exports = module.exports = function (app, mongoose) {
            
 
     app.use('/announcement', router);
+    
     require('./alert')(app,mongoose);
 }

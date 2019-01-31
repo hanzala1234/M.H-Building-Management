@@ -49,10 +49,10 @@ class myRouter extends React.Component {
                         <Route exact path="/unauth" component={unauth} />
                         <MemberRouter path={'/member'} setMemberLogin={this.setMemberLogin} {...this.state} component={MemberNav} />
                         <AdminRouter path={'/admin'} {...this.state} component={AdminNav} />
-                        <Route component={NotFound}/>
-                        </Switch>
+                        <Route component={NotFound} />
+                    </Switch>
 
-                    
+
 
                 </div>
 
@@ -84,7 +84,7 @@ function MemberRouter(props) {
 }
 
 function AdminRouter(props) {
-    
+
     const Component = props.component;
     return (
         <Route path={props.path} render={props1 =>

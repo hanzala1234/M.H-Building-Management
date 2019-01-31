@@ -1,0 +1,48 @@
+kind: Service
+apiVersion: v1
+metadata:
+  creationTimestamp: null
+  name: member-service
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    run: member-pod
+    service: member-service
+status:
+  loadBalancer: {}
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: member-pod
+  name: member-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: member-pod
+      service: member-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: member-pod
+        service: member-service
+    spec:
+      containers:
+      - image: muhammadhanzala/portal-member-svc:v1
+        name: member-pod
+        env:
+               - name: phase
+                 value: production
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}

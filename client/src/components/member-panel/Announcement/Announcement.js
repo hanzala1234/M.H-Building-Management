@@ -38,7 +38,7 @@ class Announcement extends React.Component{
     fetchAnnouncement=()=>{
         const userId=sessionStorage.getItem("user_id");
         
-        fetch(`${GloabalApi.announcementApi}Announcement/${userId}`).then(
+        fetch(`${GloabalApi.announcementApi}announcement/${userId}`).then(
                 (response)=>{
                     response.json().then((data)=>{
                         if(data.success){

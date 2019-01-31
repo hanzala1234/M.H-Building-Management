@@ -45,4 +45,6 @@ exports = module.exports = function (app, mongoose) {
 
     });
     app.use('/member', router);
+    //entry point for LoadBalancer health check
+    app.use('/',(req,res)=>res.send({success:true}));
 }
