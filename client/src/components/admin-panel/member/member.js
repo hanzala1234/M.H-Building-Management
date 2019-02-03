@@ -111,7 +111,7 @@ class MembersDisplay extends React.Component {
             announcement: "Mr: " + member.name + "! your amount of " + member.paymentBalance + " id due. kindly Pay ASAP"
         }
 
-        fetch(`${GloabalApi.announcementApi}Announcement/alert`, {
+        fetch(`${GloabalApi.announcementApi}announcement/alert`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
